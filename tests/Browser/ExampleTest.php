@@ -1,7 +1,7 @@
 <?php
 
 use App\Models\User;
-use Tests\Browser;
+use tests\Browser;
 
 function firstUser(): User
 {

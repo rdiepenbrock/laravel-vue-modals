@@ -1,9 +1,10 @@
-import { router } from '@inertiajs/vue3'
+import { router, usePage } from '@inertiajs/vue3'
 import axios from 'axios'
 import { resolvePageComponent } from 'laravel-vite-plugin/inertia-helpers'
 import { ref } from 'vue'
 
 const modal = ref(null)
+const page = usePage()
 
 function setModal(data) {
     if (modal.value) {
@@ -26,6 +27,7 @@ function open(href) {
             headers: {
                 'X-Inertia': true,
                 'X-Modal': true,
+                'X-Inertia-Version': page.version,
             },
         })
         .then((response) => setModal(response.data))

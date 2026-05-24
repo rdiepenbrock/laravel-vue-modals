@@ -1,8 +1,8 @@
 <script setup>
-import { watch } from 'vue'
+import { close, modal, reset, setModal } from '@/useModal.js'
 import { usePage } from '@inertiajs/vue3'
-import { modal, close, reset, setModal } from '@/useModal.js'
 import axios from 'axios'
+import { watch } from 'vue'
 
 const page = usePage()
 
